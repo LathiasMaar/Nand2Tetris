@@ -13,7 +13,7 @@ use ieee.std_logic_1164.ALL;
 entity Test_Nand is
 end Test_Nand;
 ------------------------------------------------------------------------
-architecture behaviour of Test_Nand is
+architecture test of Test_Nand is
 
     signal a, b, y: std_logic;
 
@@ -81,5 +81,5 @@ begin
         WAIT;
     END PROCESS;
 
-end behaviour;
+end test;
 ------------------------------------------------------------------------
