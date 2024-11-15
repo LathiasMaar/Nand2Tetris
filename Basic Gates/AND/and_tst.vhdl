@@ -1,31 +1,31 @@
 ------------------------------------------------------------------------
--- Testbench for the NAND gate
+-- Testbench for the AND gate
 -- |  A  |  B  |  Q  |
 -- | --- | --- | --- |
--- |  0  |  0  |  1  |
--- |  0  |  1  |  1  |
--- |  1  |  0  |  1  |
--- |  1  |  1  |  0  |
+-- |  0  |  0  |  0  |
+-- |  0  |  1  |  0  |
+-- |  1  |  0  |  0  |
+-- |  1  |  1  |  1  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
 ------------------------------------------------------------------------
-entity Test_Nand is
-end Test_Nand;
+entity Test_And is
+end Test_And;
 ------------------------------------------------------------------------
-architecture behaviour of Test_Nand is
+architecture test of Test_And is
 
     signal a, b, y: std_logic;
 
-    component Nand2
+    component And2
         PORT(
             a,b: IN std_logic;
             y: OUT std_logic);
     end component;
 
 begin
-    -- Create the instance to the Nand2 component (the test unit)
-    uut: Nand2 PORT MAP (
+    -- Create the instance to the And2 component (the test unit)
+    uut: And2 PORT MAP (
         a => a,
         b => b,
         y => y
@@ -41,8 +41,8 @@ begin
         a <= '0';
         b <= '0';
         WAIT FOR 10 ns;
-        if (y /= '1') then
-            report "Error: a=0, b=0, y should be 1" severity error;
+        if (y /= '0') then
+            report "Error: a=0, b=0, y should be 0" severity error;
             test_passed := false;
         end if;
 
@@ -50,8 +50,8 @@ begin
         a <= '0';
         b <= '1';
         WAIT FOR 10 ns;
-        if (y /= '1') then
-            report "Error: a=0, b=0, y should be 1" severity error;
+        if (y /= '0') then
+            report "Error: a=0, b=1, y should be 0" severity error;
             test_passed := false;
         end if;
 
@@ -59,8 +59,8 @@ begin
         a <= '1';
         b <= '0';
         WAIT FOR 10 ns;
-        if (y /= '1') then
-            report "Error: a=0, b=0, y should be 1" severity error;
+        if (y /= '0') then
+            report "Error: a=1, b=0, y should be 0" severity error;
             test_passed := false;
         end if;
 
@@ -68,8 +68,8 @@ begin
         a <= '1';
         b <= '1';
         WAIT FOR 10 ns;
-        if (y /= '0') then
-            report "Error: a=0, b=0, y should be 0" severity error;
+        if (y /= '1') then
+            report "Error: a=1, b=1, y should be 1" severity error;
             test_passed := false;
         end if;
 
@@ -81,5 +81,5 @@ begin
         WAIT;
     END PROCESS;
 
-end behaviour;
+end test;
 ------------------------------------------------------------------------
