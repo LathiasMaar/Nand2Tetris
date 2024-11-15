@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "GTKWave",
+            "type": "shell",
+            "command": "gtkwave",
+            "args": [
+                "${workspaceFolder}/output.ghw"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Abre GTKWave con el archivo de formas de onda generado."
+        }
+    ]
+}
