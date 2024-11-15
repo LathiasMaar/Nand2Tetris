@@ -1,23 +1,23 @@
 ------------------------------------------------------------------------
--- Testbench for the OR gate
+-- Testbench for the AND gate
 -- |  A  |  B  |  Q  |
 -- | --- | --- | --- |
 -- |  0  |  0  |  0  |
 -- |  0  |  1  |  1  |
 -- |  1  |  0  |  1  |
--- |  1  |  1  |  1  |
+-- |  1  |  1  |  0  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
 ------------------------------------------------------------------------
-entity Test_Or is
-end Test_Or;
+entity Test_Xor is
+end Test_Xor;
 ------------------------------------------------------------------------
-architecture test of Test_Or is
+architecture test of Test_Xor is
 
     signal a, b, y: std_logic;
 
-    component Or2
+    component Xor2
         PORT(
             a,b: IN std_logic;
             y: OUT std_logic);
@@ -25,7 +25,7 @@ architecture test of Test_Or is
 
 begin
     -- Create the instance to the And2 component (the test unit)
-    uut: Or2 PORT MAP (
+    uut: Xor2 PORT MAP (
         a => a,
         b => b,
         y => y
@@ -67,8 +67,8 @@ begin
         a <= '1';
         b <= '1';
         WAIT FOR 10 ns;
-        if (y /= '1') then
-            report "Error: a=1, b=1, y should be 1" severity error;
+        if (y /= '0') then
+            report "Error: a=1, b=1, y should be 0" severity error;
             test_passed := false;
         end if;
 
