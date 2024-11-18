@@ -13,14 +13,14 @@ use ieee.std_logic_1164.ALL;
 library libs;
 use libs.all;
 ------------------------------------------------------------------------
-entity Test_DMux1to2 is
-end Test_DMux1to2;
+entity Test_DMux2 is
+end Test_DMux2;
 ------------------------------------------------------------------------
-architecture test of Test_DMux1to2 is
+architecture test of Test_DMux2 is
 
     signal a, s, y1, y2: std_logic;
 
-    component DMux1to2
+    component DMux2
         PORT(
             a, s: IN std_logic;
             y1, y2: OUT std_logic);
@@ -28,7 +28,7 @@ architecture test of Test_DMux1to2 is
 
 begin
     -- Create the instance to the DMux1to2 component (the test unit)
-    uut: DMux1to2 PORT MAP (
+    uut: DMux2 PORT MAP (
         a => a,
         s => s,
         y1 => y1,

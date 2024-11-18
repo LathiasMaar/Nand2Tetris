@@ -4,14 +4,14 @@ use ieee.std_logic_1164.ALL;
 library libs;
 use libs.all;
 
-entity DMux1to2 is
+entity DMux2 is
     Port (
         a, s: IN std_logic;
         y1, y2: OUT std_logic
     );
-end DMux1to2;
+end DMux2;
 
-architecture structure of DMux1to2 is
+architecture structure of DMux2 is
     signal not_s:std_logic;
 
     component Not_gate

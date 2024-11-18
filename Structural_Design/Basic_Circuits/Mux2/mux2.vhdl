@@ -4,14 +4,14 @@ use ieee.std_logic_1164.ALL;
 library libs;
 use libs.all;
 
-entity Mux2to1 is
+entity Mux2 is
     Port (
         a, b, s: IN std_logic;
         y: OUT std_logic
     );
-end Mux2to1;
+end Mux2;
 
-architecture structure of Mux2to1 is
+architecture structure of Mux2 is
     signal not_s, sel_a, sel_b:std_logic;
 
     component Not_gate

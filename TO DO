@@ -1,0 +1,34 @@
+Puertas de 16bits
+    NOT16
+    AND16
+    OR16
+    MUX16
+    MUX4_16
+    MUX8_16
+
+Circuitos basicos
+    DMUX4
+    DMUX8
+    MUX4
+    MUX8
+
+    Decoder2
+    Decoder3
+
+    HALF_ADDER
+    FULL_ADDER -) ADDER16 (suma 1)
+    COUNTER
+
+    Sum (suma 2 numeros de 16)
+    Res
+
+    DATA FLIP FLOP (DFF)
+    BIT-MEMORY
+    REGISTER
+    RAM8
+    RAM64
+    RAM512
+    RAM4K
+    RAM16K
+
+    OR8 (?)
