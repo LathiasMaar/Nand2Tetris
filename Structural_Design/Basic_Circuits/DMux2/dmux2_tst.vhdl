@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- Testbench for the DMux1to2:
+-- Testbench for the DMux2:
 -- |  A  |  SEL  |  Y1  |  Y2  |
 -- | --- | ----- | ---- | ---- |
 -- |  0  |   0   |   0  |   0  |
@@ -27,7 +27,7 @@ architecture test of Test_DMux2 is
     end component;
 
 begin
-    -- Create the instance to the DMux1to2 component (the test unit)
+    -- Create the instance to the DMux2 component (the test unit)
     uut: DMux2 PORT MAP (
         a => a,
         s => s,

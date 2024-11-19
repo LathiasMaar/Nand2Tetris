@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- Testbench for the Mux1to2:
+-- Testbench for the Mux2:
 -- |  SEL  |  A  |  B  |  Y  | 
 -- | ----- | --- | --- | --- | 
 -- |  0    |  0  |  0  |  0  | 
@@ -31,7 +31,7 @@ architecture test of Test_Mux2 is
     end component;
 
 begin
-    -- Create the instance to the DMux1to2 component (the test unit)
+    -- Create the instance to the Mux2 component (the test unit)
     uut: Mux2 PORT MAP (
         a => a,
         b => b,
