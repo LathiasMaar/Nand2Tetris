@@ -1,7 +1,4 @@
 Puertas de 16bits
-    NOT16
-    AND16
-    OR16
     MUX16
     MUX4_16
     MUX8_16
