@@ -1,6 +1,3 @@
-Puertas de 16bits
-    MUX8_16
-
 Circuitos basicos
     DMUX8
 
@@ -8,11 +5,12 @@ Circuitos basicos
     Decoder2
     Decoder3
 
-    HALF_ADDER
-    FULL_ADDER -) ADDER16 (suma 1)
-    COUNTER
+    Incermenter16  
+    
+    
+    (COUNTER with memory)
 
-    Sum (suma 2 numeros de 16)
+
     Res
 
     DATA FLIP FLOP (DFF)
