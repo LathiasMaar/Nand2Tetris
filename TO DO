@@ -1,11 +1,8 @@
 Puertas de 16bits
-    MUX16
-    MUX4_16
     MUX8_16
 
 Circuitos basicos
     DMUX8
-    MUX8
 
     Coder(?)
     Decoder2

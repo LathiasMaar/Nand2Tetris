@@ -1,6 +1,10 @@
 Para compilar la libreria en la carpeta:
 ghdl -a --work=libs "F:\The Lab\NAND to Tetris\libs\logic_gates\*.vhdl" 
 ghdl -a --work=libs "F:\The Lab\NAND to Tetris\libs\components\*.vhdl"
+ghdl -a --work=libs "F:\The Lab\NAND to Tetris\libs\16bits_components\*.vhdl"
+
+ghdl -a --work=libs *.vhdl
+
 ghdl -a --work=libs [ficheros]
 ghdl -r --work=libs [entidad] --wave=output.ghw
 gtkwave .\output.ghw
