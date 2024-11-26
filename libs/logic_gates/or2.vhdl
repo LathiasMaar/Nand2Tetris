@@ -1,9 +1,31 @@
 ------------------------------------------------------------------------
--- This code implements a OR gate with two inputs 
--- using a structural architecture and only NAND gates.
--- The function: 
---      if (a or b) = 1: y = 1;
---      else: y = 0;
+--   ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   
+--   █       █   ▄  █  
+--   █   ▄   █  █ █ █  
+--   █  █ █  █   █▄▄█▄ 
+--   █  █▄█  █    ▄▄  █
+--   █       █   █  █ █
+--   █▄▄▄▄▄▄▄█▄▄▄█  █▄█
+-- ______________________________________________________________________
+-- @author. LathiasMaar
+-- @brief. This code implements a OR gate with two inputs using
+-- a structural architecture to define its structure.
+-- 
+-- @components. Nand gates (only)
+-- 
+-- @function. if (a or b) = 1: y = 1;
+--            else: y = 0;
+--
+-- @truth_table.
+--      _________________
+--    /|  A  |  B  | Out |       Inputs             Outputs
+--   | | --- | --- | --- |                 _______
+--   | |  0  |  0  |  0  |          A ----|       |
+--   | |  0  |  1  |  1  |                |  OR   |--- Y
+--   | |  1  |  0  |  1  |          B ----|______/
+--   | |  1  |  1  |  1  |                 
+--   |/ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;

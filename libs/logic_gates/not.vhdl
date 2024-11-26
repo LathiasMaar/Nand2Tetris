@@ -1,21 +1,40 @@
 ------------------------------------------------------------------------
--- This code implements a NOT gate with two inputs using 
--- a structural architecture and only NAND gates to define it.
--- The function: 
---      if a = 1: y = 0;
---      else: y = 1;
+--   ▄▄    ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ 
+--   █  █  █ █       █       █
+--   █   █▄█ █   ▄   █▄     ▄█
+--   █       █  █ █  █ █   █  
+--   █  ▄    █  █▄█  █ █   █  
+--   █ █ █   █       █ █   █  
+--   █▄█  █▄▄█▄▄▄▄▄▄▄█ █▄▄▄█  
+-- ______________________________________________________________________
+-- @author. LathiasMaar
+-- @brief. This code implements a NOT gate using 
+-- a comportamental architecture to define its structure.
+-- 
+-- @components. Nand gates (only)
+-- 
+-- @function. if (a) = 1: y = 0;
+--
+-- @truth_table.
+--      ___________
+--    /|  A  | Out |       Inputs             Outputs
+--   | | --- | --- |                 _______
+--   | |  0  |  1  |          A ----|  NOT  |--- Y
+--   | |  1  |  0  |                |______/                 
+--   |/ ¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
 ------------------------------------------------------------------------
-entity Not_gate is
+entity Not2 is
     PORT(
         a : IN std_logic;
         y : OUT std_logic
     );
-end Not_gate;
+end Not2;
 ------------------------------------------------------------------------
-architecture Not_struct of Not_gate is
+architecture Not_struct of Not2 is
 
     component Nand2
         PORT(
