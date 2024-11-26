@@ -1,9 +1,5 @@
 ------------------------------------------------------------------------
 -- Testbench for the NOT gate
--- |  A  |  Q  |
--- | --- | --- |
--- |  0  |  1  |
--- |  1  |  0  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -34,25 +30,25 @@ begin
 
     begin
 
-        -- First combination a = 0
+        --- Test1: a = 0
         a <= '0';
         WAIT FOR 10 ns;
         if (y /= '1') then
-            report "Error: a=0, y should be 1" severity error;
+            report "Error: Test1 expected result is 1" severity error;
             test_passed := false;
         end if;
 
-        -- Second combination a = 1
+        -- Test2: a = 1
         a <= '1';
         WAIT FOR 10 ns;
         if (y /= '0') then
-            report "Error: a=0, y should be 0" severity error;
+            report "Error: Test2 expected result is 0" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

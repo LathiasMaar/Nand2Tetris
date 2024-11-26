@@ -9,6 +9,20 @@ ghdl -a --work=libs [ficheros]
 ghdl -r --work=libs [entidad] --wave=output.ghw
 gtkwave .\output.ghw
 
+
+-- @truth_table.
+--      ________________________
+--    /|  A  |  B  | Out | CAR |
+--   | | --- | --- | --- | --- | 
+--   | |  0  |  0  |  0  |  0  |
+--   | |  1  |  0  |  1  |  0  |
+--   | |  0  |  1  |  1  |  0  |
+--   | |  1  |  1  |  0  |  1  | 
+--   |/ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+
+
 mi repositorio es:
 |-libs
 |     \_logic_gates 

@@ -1,11 +1,5 @@
 ------------------------------------------------------------------------
 -- Testbench for the AND gate
--- |  A  |  B  |  Q  |
--- | --- | --- | --- |
--- |  0  |  0  |  0  |
--- |  0  |  1  |  0  |
--- |  1  |  0  |  0  |
--- |  1  |  1  |  1  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -37,45 +31,45 @@ begin
 
     begin
 
-        -- First combination a = 0, b = 0
+        -- Test1: combination a = 0, b = 0
         a <= '0';
         b <= '0';
         WAIT FOR 10 ns;
         if (y /= '0') then
-            report "Error: a=0, b=0, y should be 0" severity error;
+            report "Error: Test1 expected result is 0" severity error;
             test_passed := false;
         end if;
 
-        -- Second combination a = 0, b = 1
+        -- Test2: combination a = 0, b = 1
         a <= '0';
         b <= '1';
         WAIT FOR 10 ns;
         if (y /= '0') then
-            report "Error: a=0, b=1, y should be 0" severity error;
+            report "Error: Test2 expected result is 0" severity error;
             test_passed := false;
         end if;
 
-        -- Third combination a = 1, b = 0
+        -- Test3: combination a = 1, b = 0
         a <= '1';
         b <= '0';
         WAIT FOR 10 ns;
         if (y /= '0') then
-            report "Error: a=1, b=0, y should be 0" severity error;
+            report "Error: Test3 expected result is 0" severity error;
             test_passed := false;
         end if;
 
-        -- Fourth combination a = 1, b = 1
+        -- Test4: combination a = 1, b = 1
         a <= '1';
         b <= '1';
         WAIT FOR 10 ns;
         if (y /= '1') then
-            report "Error: a=1, b=1, y should be 1" severity error;
+            report "Error: Test4 expected result is 1" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

@@ -1,9 +1,29 @@
-------------------------------------------------------------------------
--- This code implements a NAND gate with two inputs 
--- using a comportamental architecture to define it.
--- The function: 
---      if (a and b) = 1: y = 0;
---      else: y = 1;
+-------------------------------------------------------------------------
+--   ▄▄    ▄ ▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
+--   █  █  █ █      █  █  █ █      █ 
+--   █   █▄█ █  ▄   █   █▄█ █  ▄    █
+--   █       █ █▄█  █       █ █ █   █
+--   █  ▄    █      █  ▄    █ █▄█   █
+--   █ █ █   █  ▄   █ █ █   █       █
+--   █▄█  █▄▄█▄█ █▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
+-- ______________________________________________________________________
+-- @author. LathiasMaar
+-- @brief. This code implements a NAND gate with two inputs using 
+-- a comportamental architecture to define its structure.
+--
+-- @function. if (a and b) = 1: y = 0;
+--            else: y = 1;
+--
+-- @truth_table.
+--      _________________
+--    /|  A  |  B  | Out |       Inputs             Outputs
+--   | | --- | --- | --- |                 _______
+--   | |  0  |  0  |  1  |          A ----|       |
+--   | |  0  |  1  |  1  |                | NAND  |--- Y
+--   | |  1  |  0  |  1  |          B ----|______/
+--   | |  1  |  1  |  0  |                 
+--   |/ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
