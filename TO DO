@@ -13,13 +13,14 @@ Circuitos basicos
 
     Res
 
-    DATA FLIP FLOP (DFF)
-    BIT-MEMORY
-    REGISTER
-    RAM8
-    RAM64
-    RAM512
-    RAM4K
-    RAM16K
+    Sequential
+        DATA FLIP FLOP (DFF)
+        BIT-MEMORY
+        REGISTER
+        RAM8
+        RAM64
+        RAM512
+        RAM4K
+        RAM16K
 
     OR8 (?)
