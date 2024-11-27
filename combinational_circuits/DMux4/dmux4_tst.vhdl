@@ -1,15 +1,5 @@
 ------------------------------------------------------------------------
 -- Testbench for the DMux4:
--- |  A  |  SEL1  |  SEL2  |  Y1  |  Y2  |  Y3  |  Y4  |
--- | --- | ------ | ------ | ---- | ---- | ---- | ---- |
--- |  0  |   0    |   0    |   0  |   -  |   -  |   -  |
--- |  1  |   0    |   0    |   1  |   -  |   -  |   -  |
--- |  0  |   1    |   0    |   -  |   0  |   -  |   -  |
--- |  1  |   1    |   0    |   -  |   1  |   -  |   -  |
--- |  0  |   0    |   1    |   -  |   -  |   0  |   -  |
--- |  1  |   0    |   1    |   -  |   -  |   1  |   -  |
--- |  0  |   1    |   1    |   -  |   -  |   -  |   0  |
--- |  1  |   1    |   1    |   -  |   -  |   -  |   1  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -53,7 +43,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0' and y3 /= '0' and y4 /= '0') then
-            report "Error: for a=0, s1=0 y s2=0, result expected y1=0, y2=0, y3=0, y4=0" severity error;
+            report "Error: Test1 expected results are y1=0, y2=0, y3=0, y4=0" severity error;
             test_passed := false;
         end if;
 
@@ -63,7 +53,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y1 /= '1' and y2 /= '0' and y3 /= '0' and y4 /= '0') then
-            report "Error: for a=1, s1=0 y s2=0, result expected y1=1, y2=0, y3=0, y4=0" severity error;
+            report "Error: Test2 expected results are y1=1, y2=0, y3=0, y4=0" severity error;
             test_passed := false;
         end if;
 
@@ -73,7 +63,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0' and y3 /= '0' and y4 /= '0') then
-            report "Error: for a=0, s1=1 y s2=0, result expected y1=0, y2=0, y3=0, y4=0" severity error;
+            report "Error: Test3 expected results are y1=0, y2=0, y3=0, y4=0" severity error;
             test_passed := false;
         end if;
 
@@ -83,7 +73,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '1' and y3 /= '0' and y4 /= '0') then
-            report "Error: for a=1, s1=1 y s2=0, result expected y1=0, y2=1, y3=0, y4=0" severity error;
+            report "Error: Test4 expected results are y1=0, y2=1, y3=0, y4=0" severity error;
             test_passed := false;
         end if;
 
@@ -93,7 +83,7 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0' and y3 /= '0' and y4 /= '0') then
-            report "Error: for a=0, s1=0 y s2=0, result expected y1=0, y2=0, y3=0, y4=0" severity error;
+            report "Error: Test5 expected results are y1=0, y2=0, y3=0, y4=0" severity error;
             test_passed := false;
         end if;
 
@@ -103,7 +93,7 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0' and y3 /= '1' and y4 /= '0') then
-            report "Error: for a=1, s1=0 y s2=1, result expected y1=0, y2=0, y3=1, y4=0" severity error;
+            report "Error: Test6 expected results are y1=0, y2=0, y3=1, y4=0" severity error;
             test_passed := false;
         end if;
         
@@ -113,7 +103,7 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0' and y3 /= '0' and y4 /= '0') then
-            report "Error: for a=0, s1=0 y s2=0, result expected y1=0, y2=0, y3=0, y4=0" severity error;
+            report "Error: Test7 expected results are y1=0, y2=0, y3=0, y4=0" severity error;
             test_passed := false;
         end if;
 
@@ -123,13 +113,13 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0' and y3 /= '0' and y4 /= '1') then
-            report "Error: for a=1, s1=1 y s2=1, result expected y1=0, y2=0, y3=0, y4=1" severity error;
+            report "Error: Test8 expected results are y1=0, y2=0, y3=0, y4=1" severity error;
             test_passed := false;
         end if;
         
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

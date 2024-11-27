@@ -1,11 +1,5 @@
 ------------------------------------------------------------------------
 -- Testbench for the DMux2:
--- |  A  |  SEL  |  Y1  |  Y2  |
--- | --- | ----- | ---- | ---- |
--- |  0  |   0   |   0  |   0  |
--- |  0  |   1   |   0  |   0  |
--- |  1  |   0   |   1  |   0  |
--- |  1  |   1   |   0  |   1  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -40,45 +34,45 @@ begin
         variable test_passed: boolean := true;
 
     begin
-        -- First combination a = 0, s = 0
+        -- Test1: combination a = 0, s = 0
         a <= '0';
         s <= '0';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0') then
-            report "Error: for a=0 and s=0, result expected y1=0, y2=0" severity error;
+            report "Error: Test1 expected results are y1=0, y2=0" severity error;
             test_passed := false;
         end if;
 
-        -- Second combination a = 0, s = 1
+        -- Test2: combination a = 0, s = 1
         a <= '0';
         s <= '1';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '0') then
-            report "Error: for a=0 and s=1, result expected y1=0, y2=0" severity error;
+            report "Error: Test2 expected results are y1=0, y2=0" severity error;
             test_passed := false;
         end if;
 
-        -- Third combination a = 1, s = 0
+        -- Test3: combination a = 1, s = 0
         a <= '1';
         s <= '0';
         WAIT FOR 10 ns;
         if (y1 /= '1' and y2 /= '0') then
-            report "Error: for a=1 and s=0, result expected y1=1, y2=0" severity error;
+            report "Error: Test3 expected results are y1=1, y2=0" severity error;
             test_passed := false;
         end if;
 
-        -- Fourth combination a = 1, s = 1
+        -- Test4: combination a = 1, s = 1
         a <= '1';
         s <= '1';
         WAIT FOR 10 ns;
         if (y1 /= '0' and y2 /= '1') then
-            report "Error: for a=1 and s=1, result expected y1=0, y2=1" severity error;
+            report "Error: Test4 expected results are y1=0, y2=1" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;
