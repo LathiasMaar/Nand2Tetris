@@ -1,9 +1,35 @@
 ------------------------------------------------------------------------
--- This code implements a OR gate with three inputs 
--- using a structural architecture.
--- The function: 
---      if (a or b or c) = 1: y = 1;
---      else: y = 0;
+--    ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ 
+--   █       █   ▄  █ █       █
+--   █   ▄   █  █ █ █ █▄▄▄    █
+--   █  █ █  █   █▄▄█▄ ▄▄▄█   █
+--   █  █▄█  █    ▄▄  █▄▄▄    █
+--   █       █   █  █ █▄▄▄█   █
+--   █▄▄▄▄▄▄▄█▄▄▄█  █▄█▄▄▄▄▄▄▄█
+-- ______________________________________________________________________
+-- @author. LathiasMaar
+-- @brief. This code implements a OR gate of three inputs using
+-- a structural architecture to define its structure.
+-- 
+-- @components. or2 (gates)
+-- 
+-- @function. if (a or b or c) = 1: y = 1;
+--            else: y = 0;
+--
+-- @truth_table.
+--      _______________________
+--    /|  A  |  B  |  C  | Out |       Inputs             Outputs
+--   | | --- | --- | --- | --- |                 _______
+--   | |  0  |  0  |  0  |  0  |          A ----|       |
+--   | |  0  |  0  |  1  |  1  |                |       |
+--   | |  0  |  1  |  0  |  1  |          B ----|  OR   | --- Y          
+--   | |  0  |  1  |  1  |  1  |                |       |
+--   | |  1  |  0  |  0  |  1  |          C ----|______/
+--   | |  1  |  0  |  1  |  1  |                 
+--   | |  1  |  1  |  0  |  1  | 
+--   | |  1  |  1  |  1  |  1  | 
+--   |/ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;

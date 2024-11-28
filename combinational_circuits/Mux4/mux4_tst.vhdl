@@ -56,7 +56,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=0, b=0, c=0, d=0, s1=0 and s2=0, result expected y=0" severity error;
+            report "Error: Test1 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -69,7 +69,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=1, b=0, c=0, d=0, s1=0 and s2=0, result expected y=1" severity error;
+            report "Error: Test2 expected results is 1" severity error;
             test_passed := false;
         end if;
 
@@ -82,7 +82,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=0, b=0, c=0, d=0, s1=1 and s2=0, result expected y=0" severity error;
+            report "Error: Test3 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -95,7 +95,7 @@ begin
         s2 <= '0';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=0, b=1, c=0, d=0, s1=1 and s2=0, result expected y=1" severity error;
+            report "Error: Test4 expected results is 1" severity error;
             test_passed := false;
         end if;
 
@@ -108,7 +108,7 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y /= c) then
-            report "Error: for a=0, b=0, c=0, d=0, s1=0 and s2=1, result expected y=0" severity error;
+            report "Error: Test5 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -121,7 +121,7 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y /= c) then
-            report "Error: for a=0, b=0, c=1, d=0, s1=0 and s2=1, result expected y=1" severity error;
+            report "Error: Test6 expected results is 1" severity error;
             test_passed := false;
         end if;
 
@@ -134,7 +134,7 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y /= d) then
-            report "Error: for a=0, b=0, c=0, d=0, s1=1 and s2=1, result expected y=0" severity error;
+            report "Error: Test7 expected results is 0" severity error;
             test_passed := false;
         end if;
         
@@ -147,13 +147,13 @@ begin
         s2 <= '1';
         WAIT FOR 10 ns;
         if (y /= d) then
-            report "Error: for a=0, b=0, c=0, d=1, s1=1 and s2=1, result expected y=1" severity error;
+            report "Error: Test8 expected results is 1" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

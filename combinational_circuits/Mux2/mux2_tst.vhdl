@@ -1,15 +1,5 @@
 ------------------------------------------------------------------------
 -- Testbench for the Mux2:
--- |  SEL  |  A  |  B  |  Y  | 
--- | ----- | --- | --- | --- | 
--- |  0    |  0  |  0  |  0  | 
--- |  0    |  0  |  1  |  0  |
--- |  0    |  1  |  0  |  1  |
--- |  0    |  1  |  1  |  1  |
--- |  1    |  0  |  0  |  0  | 
--- |  1    |  0  |  1  |  1  |
--- |  1    |  1  |  0  |  0  |
--- |  1    |  1  |  1  |  1  |
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -50,7 +40,7 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=0, b=0 and s=0, result expected y=0" severity error;
+            report "Error: Test1 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -60,7 +50,7 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=0, b=1 and s=0, result expected y=0" severity error;
+            report "Error: Test1 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -70,7 +60,7 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=1, b=0 and s=0, result expected y=1" severity error;
+            report "Error: Test3 expected results is 1" severity error;
             test_passed := false;
         end if;
 
@@ -80,7 +70,7 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=1, b=1 and s=0, result expected y=1" severity error;
+            report "Error: Test4 expected results is 1" severity error;
             test_passed := false;
         end if;
 
@@ -90,7 +80,7 @@ begin
         s <= '1';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=0, b=0 and s=1, result expected y=0" severity error;
+            report "Error: Test5 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -100,7 +90,7 @@ begin
         s <= '1';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=0, b=1 and s=1, result expected y=1" severity error;
+            report "Error: Test6 expected results is 1" severity error;
             test_passed := false;
         end if;
 
@@ -110,7 +100,7 @@ begin
         s <= '1';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=1, b=0 and s=1, result expected y=0" severity error;
+            report "Error: Test7 expected results is 0" severity error;
             test_passed := false;
         end if;
 
@@ -120,13 +110,13 @@ begin
         s <= '1';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=1, b=1 and s=1, result expected y=1" severity error;
+            report "Error: Test8 expected results is 1" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;
