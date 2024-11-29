@@ -1,28 +1,15 @@
-------------------------------------------------------------------------
--- Implementation of the FULL_ADDER circuit.
---      _____________________________
---    /|  A  |  B  |  C  | SUM | CAR |
---   | | --- | --- | --- | --- | --- | 
---   | |  0  |  0  |  0  |  0  |  0  |
---   | |  1  |  0  |  0  |  1  |  0  |
---   | |  0  |  1  |  0  |  1  |  0  |
---   | |  1  |  1  |  0  |  0  |  1  | 
---   | |  0  |  0  |  1  |  1  |  0  |
---   | |  1  |  0  |  1  |  0  |  1  |
---   | |  0  |  1  |  1  |  0  |  1  |
---   | |  1  |  1  |  1  |  1  |  1  | 
---   |/ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯/
---    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-- Testbench for the FULL_ADDER circuit.
+-------------------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
 
 library libs;
 use libs.all;
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 entity Test_FullAdder is
 end Test_FullAdder;
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 architecture test of Test_FullAdder is
 
     signal a, b, c, sum, car: std_logic;
@@ -54,7 +41,7 @@ begin
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= '0' and car /= '0') then
-            report "Error: Test 1 result expected sum=0 and car=0" severity error;
+            report "Error: Test 1 expected result sum=0 and car=0" severity error;
             test_passed := false;
         end if;
 
@@ -64,7 +51,7 @@ begin
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= '1' and car /= '0') then
-            report "Error: Test 2 result expected sum=1 and car=0" severity error;
+            report "Error: Test 2 expected result sum=1 and car=0" severity error;
             test_passed := false;
         end if;
 
@@ -74,7 +61,7 @@ begin
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= '1' and car /= '0') then
-            report "Error: Test 3 result expected sum=1 and car=0" severity error;
+            report "Error: Test 3 expected result sum=1 and car=0" severity error;
             test_passed := false;
         end if;
 
@@ -83,8 +70,8 @@ begin
         b <= '1';
         c <= '0';
         WAIT FOR 10 ns;
-        if (sum /= '1' and car /= '1') then
-            report "Error: Test 4 result expected sum=1 and car=1" severity error;
+        if (sum /= '0' and car /= '1') then
+            report "Error: Test 4 expected result sum=0 and car=1" severity error;
             test_passed := false;
         end if;
 
@@ -94,7 +81,7 @@ begin
         c <= '1';
         WAIT FOR 10 ns;
         if (sum /= '1' and car /= '0') then
-            report "Error: Test 1 result expected sum=1 and car=0" severity error;
+            report "Error: Test 5 expected result sum=1 and car=0" severity error;
             test_passed := false;
         end if;
 
@@ -104,7 +91,7 @@ begin
         c <= '1';
         WAIT FOR 10 ns;
         if (sum /= '0' and car /= '1') then
-            report "Error: Test 2 result expected sum=0 and car=1" severity error;
+            report "Error: Test 6 expected result sum=0 and car=1" severity error;
             test_passed := false;
         end if;
 
@@ -114,7 +101,7 @@ begin
         c <= '1';
         WAIT FOR 10 ns;
         if (sum /= '0' and car /= '1') then
-            report "Error: Test 3 result expected sum=0 and car=1" severity error;
+            report "Error: Test 7 expected result sum=0 and car=1" severity error;
             test_passed := false;
         end if;
 
@@ -124,17 +111,17 @@ begin
         c <= '1';
         WAIT FOR 10 ns;
         if (sum /= '1' and car /= '1') then
-            report "Error: Test 4 result expected sum=1 and car=1" severity error;
+            report "Error: Test 8 expected result sum=1 and car=1" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;
     END PROCESS;
 
 end test;
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- Testbench for the Mux2:
+-- Testbench for the Mux2 circuit:
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -50,7 +50,7 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: Test1 expected results is 0" severity error;
+            report "Error: Test2 expected results is 0" severity error;
             test_passed := false;
         end if;
 

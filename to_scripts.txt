@@ -1,7 +1,7 @@
 Para compilar la libreria en la carpeta:
-ghdl -a --work=libs "F:\The Lab\NAND to Tetris\libs\logic_gates\*.vhdl" 
-ghdl -a --work=libs "F:\The Lab\NAND to Tetris\libs\comb_components\*.vhdl"
-ghdl -a --work=libs "F:\The Lab\NAND to Tetris\libs\16bits_components\*.vhdl"
+ghdl -a --work=libs "F:\The Lab\NAND to Tetris\_libs\logic_gates\*.vhdl" 
+ghdl -a --work=libs "F:\The Lab\NAND to Tetris\_libs\comb_components\*.vhdl"
+ghdl -a --work=libs "F:\The Lab\NAND to Tetris\_libs\16bits_components\*.vhdl"
 
 ghdl -a --work=libs *.vhdl
 
