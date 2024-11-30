@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- Testbench for the NOT gate
+-- Testbench for the NOT16 gate
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -34,7 +34,7 @@ begin
         a <= "0000000000000000";
         WAIT FOR 10 ns;
         if (y /= "1111111111111111") then
-            report "Error: a=0000000000000000, expected y=1111111111111111" severity error;
+            report "Error: Test1 expected result is y=1111" severity error;
             test_passed := false;
         end if;
 
@@ -42,7 +42,7 @@ begin
         a <= "1111111111111111";
         WAIT FOR 10 ns;
         if (y /= "0000000000000000") then
-            report "Error: a=1111111111111111, y should be 0000000000000000" severity error;
+            report "Error: Test2 expected result is y=0000" severity error;
             test_passed := false;
         end if;
 
@@ -50,21 +50,21 @@ begin
          a <= "0101010101010101";
          WAIT FOR 10 ns;
          if (y /= "1010101010101010") then
-             report "Error: a=0101010101010101, y should be 1010101010101010" severity error;
+             report "Error: Test3 expected result is y=AAAA" severity error;
              test_passed := false;
          end if;
 
-         -- Test 4: a = 0000111100001111
+         -- Test 4: a = 0F0F
          a <= "0000111100001111";
          WAIT FOR 10 ns;
          if (y /= "1111000011110000") then
-             report "Error: a=0000111100001111, y should be 1111000011110000" severity error;
+             report "Error: Test4 expected result is y=F0F0" severity error;
              test_passed := false;
          end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

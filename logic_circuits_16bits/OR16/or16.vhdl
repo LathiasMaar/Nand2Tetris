@@ -1,9 +1,31 @@
 ------------------------------------------------------------------------
--- This code implements a OR gate for a bus of 16 bits
--- using a structural architecture.
--- The function: 
---      if (a or b) = 1: y = 1;
---      else: y = 0;
+--    ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄ ▄▄▄     
+--   █       █   ▄  █ █    █   █    
+--   █   ▄   █  █ █ █  █   █   █▄▄▄ 
+--   █  █ █  █   █▄▄█▄ █   █    ▄  █
+--   █  █▄█  █    ▄▄  ██   █   █ █ █
+--   █       █   █  █ ██   █   █▄█ █
+--   █▄▄▄▄▄▄▄█▄▄▄█  █▄██▄▄▄█▄▄▄▄▄▄▄█
+-- ______________________________________________________________________
+-- @author. LathiasMaar
+-- @brief. This code implements a Or gate with two 16-bits buses
+-- using a structural architecture to define its structure.
+-- 
+-- @components. Or2 gates 
+-- 
+-- @function. if (a[n] or b[n]) = 1: y[n] = 1;
+--            else: y[n] = 0;
+--
+-- @truth_table.
+--      ___________________
+--    /| A[n]| B[n]| Out[n]|            Inputs               Outputs
+--   | | --- | --- | ----- |                     ________
+--   | |  0  |  0  |   0   |          A -/16b/- |        |   
+--   | |  0  |  1  |   1   |                    |  OR16  | -/16b/- Y
+--   | |  1  |  0  |   1   |          B -/16b/- |_______/
+--   | |  1  |  1  |   1   |                 
+--   |/ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;

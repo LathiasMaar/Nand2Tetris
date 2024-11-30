@@ -1,9 +1,28 @@
 ------------------------------------------------------------------------
--- This code implements a NOT gate for a bus of 16 bits using 
--- a structural architecture.
--- The function: 
---      if a = 1: y = 0;
---      else: y = 1;
+--    ▄▄    ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄     
+--   █  █  █ █       █       █    █   █    
+--   █   █▄█ █   ▄   █▄     ▄██   █   █▄▄▄ 
+--   █       █  █ █  █ █   █  █   █    ▄  █
+--   █  ▄    █  █▄█  █ █   █  █   █   █ █ █
+--   █ █ █   █       █ █   █  █   █   █▄█ █
+--   █▄█  █▄▄█▄▄▄▄▄▄▄█ █▄▄▄█  █▄▄▄█▄▄▄▄▄▄▄█
+-- ______________________________________________________________________
+-- @author. LathiasMaar
+-- @brief. This code implements a NOT gate for a 16-bits bus using 
+-- a comportamental architecture to define its structure.
+-- 
+-- @components. Not gates
+-- 
+-- @function. if (a[n]) = 1: y[n] = 0;
+--
+-- @truth_table.
+--      _____________
+--    /| A[n]| Out[n]|          Inputs                Outputs
+--   | | --- | ----- |                    ________
+--   | |  0  |   1   |         A -/16b/- | NOT16  | -/16b/- Y
+--   | |  1  |   0   |                   |_______/                 
+--   |/ ¯¯¯¯¯¯¯¯¯¯¯¯/
+--    ¯¯¯¯¯¯¯¯¯¯¯¯¯
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;

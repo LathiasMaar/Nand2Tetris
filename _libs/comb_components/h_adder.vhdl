@@ -10,7 +10,7 @@
 -- @author. LathiasMaar
 -- @brief. This code implements a half_adder circuit
 -- 
--- @components. Xor2 gates, And2 gates
+-- @components. Xor2 gates, And2 gates, Or2 gates
 --
 -- @function. if (a xor b) = 1:         
 --                sum = 1;                        
