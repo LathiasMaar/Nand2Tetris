@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- Testbench for the Mux2_16:
+-- Testbench for the Mux4_16:
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -48,7 +48,7 @@ begin
         s1 <= '0'; s2 <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=0000, b=FFFF, c=00FF, d=FF00 and s=0, result expected y=0000" severity error;
+            report "Error: Test1 expected results is y=000F" severity error;
             test_passed := false;
         end if;
 
@@ -60,7 +60,7 @@ begin
         s1 <= '1'; s2 <= '0';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=0000, b=FFFF, c=00FF, d=FF00 and s=1, result expected y=FFFF" severity error;
+            report "Error: Test2 expected results is y=00F0" severity error;
             test_passed := false;
         end if;
 
@@ -72,7 +72,7 @@ begin
         s1 <= '0'; s2 <= '1';
         WAIT FOR 10 ns;
         if (y /= c) then
-            report "Error: for a=0000, b=FFFF, c=00FF, d=FF00 and s=2, result expected y=00FF" severity error;
+            report "Error: Test3 expected results is y=0F00" severity error;
             test_passed := false;
         end if;
 
@@ -84,13 +84,13 @@ begin
         s1 <= '1'; s2 <= '1';
         WAIT FOR 10 ns;
         if (y /= d) then
-            report "Error: for a=0000, b=FFFF, c=00FF, d=FF00 and s=3, result expected y=FF00" severity error;
+            report "Error: Test4 expected results is y=F000" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

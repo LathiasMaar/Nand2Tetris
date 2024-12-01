@@ -43,7 +43,7 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=0000, b=FFFF and s=0, result expected y=0000" severity error;
+            report "Error: Test1 expected results is y=0000" severity error;
             test_passed := false;
         end if;
 
@@ -53,7 +53,7 @@ begin
         s <= '1';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=0000, b=FFFF and s=0, result expected y=0000" severity error;
+            report "Error: Test2 expected results is y=FFFF" severity error;
             test_passed := false;
         end if;
 
@@ -63,23 +63,23 @@ begin
         s <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: for a=00FF, b=FF00 and s=0, result expected y=00FF" severity error;
+            report "Error: Test3 expected results is y=00FF" severity error;
             test_passed := false;
         end if;
 
-        -- Test 4: combination a = 0000, b = FFFF, s=0
+        -- Test 4: combination a = 0000, b = FF00, s=1
         a <= "0000000011111111";
         b <= "1111111100000000";
         s <= '1';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: for a=00FF, b=FF00 and s=0, result expected y=FF00" severity error;
+            report "Error: Test4 expected results is y=FF00" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

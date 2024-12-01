@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- Testbench for the Mux2_16:
+-- Testbench for the Mux8_16:
 ------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -57,7 +57,7 @@ begin
         s1 <= '0'; s2 <= '0'; s3 <= '0';
         WAIT FOR 10 ns;
         if (y /= a) then
-            report "Error: Test 1 result expected y=000F" severity error;
+            report "Error: Test 1 expected result y=0003" severity error;
             test_passed := false;
         end if;
 
@@ -73,7 +73,7 @@ begin
         s1 <= '1'; s2 <= '0'; s3 <= '0';
         WAIT FOR 10 ns;
         if (y /= b) then
-            report "Error: Test 2 result expected y=00F0" severity error;
+            report "Error: Test 2 expected result y=000C" severity error;
             test_passed := false;
         end if;
 
@@ -89,7 +89,7 @@ begin
         s1 <= '0'; s2 <= '1'; s3 <= '0';
         WAIT FOR 10 ns;
         if (y /= c) then
-            report "Error: Test 3 result expected y=00FF" severity error;
+            report "Error: Test 3 expected result y=0030" severity error;
             test_passed := false;
         end if;
 
@@ -105,7 +105,7 @@ begin
         s1 <= '1'; s2 <= '1'; s3 <= '0';
         WAIT FOR 10 ns;
         if (y /= d) then
-            report "Error: Test 4 result expected y=0F00" severity error;
+            report "Error: Test 4 expected result y=00C0" severity error;
             test_passed := false;
         end if;
 
@@ -121,7 +121,7 @@ begin
         s1 <= '0'; s2 <= '0'; s3 <= '1';
         WAIT FOR 10 ns;
         if (y /= e) then
-            report "Error: Test 5 result expected y=0F0F" severity error;
+            report "Error: Test 5 expected result y=0300" severity error;
             test_passed := false;
         end if;
 
@@ -137,7 +137,7 @@ begin
         s1 <= '1'; s2 <= '0'; s3 <= '1';
         WAIT FOR 10 ns;
         if (y /= f) then
-            report "Error: Test 6 result expected y=0FF0" severity error;
+            report "Error: Test 6 expected result y=0C00" severity error;
             test_passed := false;
         end if;
 
@@ -153,7 +153,7 @@ begin
         s1 <= '0'; s2 <= '1'; s3 <= '1';
         WAIT FOR 10 ns;
         if (y /= g) then
-            report "Error: Test 7 result expected y=F000" severity error;
+            report "Error: Test 7 expected result y=3000" severity error;
             test_passed := false;
         end if;
 
@@ -169,13 +169,13 @@ begin
         s1 <= '1'; s2 <= '1'; s3 <= '1';
         WAIT FOR 10 ns;
         if (y /= h) then
-            report "Error: Test 8 result expected y=F00F" severity error;
+            report "Error: Test 8 expected result y=C000" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;

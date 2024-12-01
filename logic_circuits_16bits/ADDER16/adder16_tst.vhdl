@@ -49,23 +49,23 @@ begin
             test_passed := false;
         end if;
 
-        -- Test 2: combination a = 1, b = 0, c = 1 
+        -- Test 2: combination a = 0000, b = 0000, c = 1 
         a <= "0000000000000000";
         b <= "0000000000000000";
         c <= '1';
         WAIT FOR 10 ns;
         if (sum /= "0000000000000001" and car /= '0') then
-            report "Error: Test 1 result expected sum=0001 and car=0" severity error;
+            report "Error: Test 2 result expected sum=0001 and car=0" severity error;
             test_passed := false;
         end if;
 
-        -- Test 3: combination a = 0, b = 1, c = 0 
+        -- Test 3: combination a = FFFF, b = 0001, c = 0 
         a <= "1111111111111111";
         b <= "0000000000000001";
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= "0000000000000000" and car /= '1') then
-            report "Error: Test 1 result expected sum=0000 and car=1" severity error;
+            report "Error: Test 3 result expected sum=0000 and car=1" severity error;
             test_passed := false;
         end if;
 
@@ -75,7 +75,7 @@ begin
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= "1111111111111111" and car /= '0') then
-            report "Error: Test 1 result expected sum=FFFF and car=0" severity error;
+            report "Error: Test 4 result expected sum=FFFF and car=0" severity error;
             test_passed := false;
         end if;
 
@@ -85,7 +85,7 @@ begin
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= "0100110010110011" and car /= '0') then
-            report "Error: Test 1 result expected sum= and car=0" severity error;
+            report "Error: Test 5 result expected sum=4CB3 and car=0" severity error;
             test_passed := false;
         end if;
 
@@ -95,13 +95,13 @@ begin
         c <= '0';
         WAIT FOR 10 ns;
         if (sum /= "1111111111111110" and car /= '1') then
-            report "Error: Test 1 result expected sum=FFFE and car=1" severity error;
+            report "Error: Test 6 result expected sum=FFFE and car=1" severity error;
             test_passed := false;
         end if;
 
         -- Test completed
         if test_passed then
-            report "Test completed successfully!" severity note;
+            report "All tests completed successfully!" severity note;
         end if;
 
         WAIT;
