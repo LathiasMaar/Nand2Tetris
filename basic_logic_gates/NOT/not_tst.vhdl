@@ -11,7 +11,7 @@ architecture test of Test_Not is
 
     signal a, y: std_logic;
 
-    component Not2
+    component Not_gate
         PORT(
             a: IN std_logic;
             y: OUT std_logic);

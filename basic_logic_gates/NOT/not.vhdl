@@ -27,14 +27,14 @@
 library ieee;
 use ieee.std_logic_1164.ALL;
 ------------------------------------------------------------------------
-entity Not2 is
+entity Not_gate is
     PORT(
         a : IN std_logic;
         y : OUT std_logic
     );
-end Not2;
+end Not_gate;
 ------------------------------------------------------------------------
-architecture Not_struct of Not2 is
+architecture Not_struct of Not_gate is
 
     component Nand2
         PORT(
