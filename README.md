@@ -47,5 +47,6 @@ and simulated every component using VHDL (VHSIC Hardware Description Language) a
   ║    ╠ [MUX4_16]                       # 4 channels 16-bits Multiplexor
   ║    ╚ [MUX8_16]                       # 8 channels 16-bits Multiplexor
   ╠ [sequential_circuits]           # Sequential circuits .vhdl files and test files
-       ╚ [...] 
+  ║    ╠ [DFF]                           # Data Flip Flop 
+  ║    ╠ [1-bit memory]                  # 
 ```
